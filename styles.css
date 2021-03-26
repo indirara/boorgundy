@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* You can add global styles to this file, and also import other style files */
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10059,6 +10058,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/*# sourceMappingURL=bootstrap.css.map */
+/* You can add global styles to this file, and also import other style files */
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -12381,6 +12382,10 @@ textarea.form-control-lg {
   /* IE9 Compat Modes */
   src: local(""), url('sacramento-v8-latin-regular.eot') format("embedded-opentype"), url('sacramento-v8-latin-regular.woff2') format("woff2"), url('sacramento-v8-latin-regular.woff') format("woff"), url('sacramento-v8-latin-regular.ttf') format("truetype"), url('sacramento-v8-latin-regular.svg') format("svg");
   /* Legacy iOS */
+}
+.social-icon {
+  color: #6e1423;
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map*/
