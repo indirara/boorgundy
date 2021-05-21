@@ -12529,6 +12529,11 @@ textarea.form-control-lg {
   font-family: "Audrey-MediumOblique";
   src: url('Audrey-MediumOblique.otf') format("opentype");
 }
+/* lato-light */
+@font-face {
+  font-family: "Lato-Light";
+  src: url('Lato-Light.ttf') format("truetype");
+}
 /* santa fe */
 @font-face {
   font-family: "SantaFe";
@@ -12540,11 +12545,10 @@ textarea.form-control-lg {
   src: url('SantaFeSpringTail.woff') format("woff");
 }
 .btn-social {
-  border-color: #400A10;
+  border-color: black;
   background-color: transparent;
-  font-size: 2vmin;
-  font-family: "Quicksand";
-  color: #400A10;
+  font-family: Forum;
+  color: black;
   background-color: transparent;
   border-radius: 0;
 }
@@ -12553,8 +12557,12 @@ textarea.form-control-lg {
 .btn-social:active,
 .btn-social.active,
 .open > .dropdown-toggle.btn-social {
-  color: #F9104E;
-  border-color: #F9104E;
+  color: #FF0040;
+  border-color: #FF0040;
+}
+p {
+  font-size: 1.2rem;
+  font-family: Lato-Light;
 }
 
 /*# sourceMappingURL=styles.css.map*/
