@@ -1,0 +1,32 @@
+@import './src/utilities/variables';
+
+.img-responsive-start,
+.img-responsive-end {
+  max-width: 80%;
+  min-width: auto;
+  min-height: auto;
+  height: auto;
+  object-fit: scale-down;
+  display: block;
+}
+
+.img-responsive-headline {
+  max-width: 90%;
+  height: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .img-responsive-start {
+    max-height: 200px;
+    margin-left: 2rem;
+  }
+  .img-responsive-end {
+    max-height: 200px;
+    margin-right: 2rem;
+  }
+}
+
+.img-responsive-margin {
+  max-width: 90%;
+  margin-left: 20px;
+}

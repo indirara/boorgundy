@@ -1,0 +1,19 @@
+@import './src/utilities/variables';
+
+.img-responsive {
+  max-width: 90%;
+  height: auto;
+}
+
+.img-responsive-margin {
+  max-width: 90%;
+  margin-left: 20px;
+}
+
+.custom-justify-start {
+  margin-left: 5%;
+}
+
+.custom-justify-end {
+  margin-left: 10%;
+}

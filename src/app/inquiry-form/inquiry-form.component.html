@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path
+      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+    />
+  </symbol>
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path
+      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+    />
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path
+      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+    />
+  </symbol>
+</svg>
+
+<div class="container">
+  <form [formGroup]="inquiryForm" (ngSubmit)="inquiryForm.valid && submit()">
+    <div *ngIf="shouldShowSuccessAlert" class="alert alert-success d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+        <use xlink:href="#check-circle-fill" />
+      </svg>
+      <div>Thanks for the inquiry, we'll get back to you shortly!</div>
+    </div>
+    <div *ngIf="shouldShowFailureAlert" class="alert alert-danger d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+        <use xlink:href="#exclamation-triangle-fill" />
+      </svg>
+      <div class="alert-text">Something went wrong with sending your inquiry! Please reach out to <a href="mailto:boorgundy@gmail.com">boorgundy@gmail.com</a></div>
+    </div>
+    <div class="form-group row name" [class.has-errors]="name.touched && name.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="name">NAME</label>
+            <input
+              type="text"
+              formControlName="name"
+              name="name"
+              class="form-control"
+              id="name"
+              [class.is-invalid]="name.touched && name.invalid"
+            />
+            <div *ngIf="name.touched && name.errors?.required" class="my-2 form-error-prompt">Name required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row email" [class.has-errors]="email.touched && email.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="email">EMAIL</label>
+            <input
+              type="text"
+              formControlName="email"
+              name="email"
+              class="form-control"
+              id="email"
+              [class.is-invalid]="email.touched && email.invalid"
+            />
+            <div *ngIf="email.touched && email.errors?.required" class="my-2 form-error-prompt">Email required</div>
+            <div *ngIf="email.touched && email.errors?.email" class="my-2 form-error-prompt">
+              Wrong format, please try again
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row businessName" [class.has-errors]="businessName.touched && businessName.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="businessName">BUSINESS NAME</label>
+            <input
+              type="text"
+              formControlName="businessName"
+              name="businessName"
+              class="form-control"
+              id="businessName"
+              [class.is-invalid]="businessName.touched && businessName.invalid"
+            />
+            <div *ngIf="businessName.touched && businessName.errors?.required" class="my-2 form-error-prompt">
+              Business name required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row website" [class.has-errors]="website.touched && website.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="website">WEBSITE AND/OR INSTAGRAM HANDLE</label>
+            <input
+              type="text"
+              formControlName="website"
+              name="website"
+              class="form-control"
+              id="website"
+              [class.is-invalid]="website.touched && website.invalid"
+            />
+            <div *ngIf="website.touched && website.errors?.required" class="my-2 form-error-prompt">
+              Website and/or Instagram handle required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row businessTime">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="businessTime">HOW LONG HAVE YOU BEEN IN BUSINESS?</label>
+            <select formControlName="businessTime" name="businessTime" class="form-control" id="businessTime">
+              <option *ngFor="let businessTimeOption of businessTimeOptions">{{ businessTimeOption }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row aboutYou" [class.has-errors]="aboutYou.touched && aboutYou.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="aboutYou">TELL US ABOUT YOUR BRAND & WHAT YOU ARE LOOKING FOR</label>
+            <input
+              type="text"
+              formControlName="aboutYou"
+              name="aboutYou"
+              class="form-control"
+              id="aboutYou"
+              [class.is-invalid]="aboutYou.touched && aboutYou.invalid"
+            />
+            <div *ngIf="aboutYou.touched && aboutYou.errors?.required" class="my-2 form-error-prompt">
+              Brand information required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row package">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="package">WHAT PACKAGE ARE YOU INTERESTED IN?</label>
+            <select formControlName="package" name="package" class="form-control minimal" id="package">
+              <option *ngFor="let packageOption of packageOptions">{{ packageOption }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row budget" [class.has-errors]="budget.touched && budget.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="budget">DO YOU HAVE A BUDGET IN MIND?</label>
+            <input
+              type="text"
+              formControlName="budget"
+              name="budget"
+              class="form-control"
+              id="budget"
+              [class.is-invalid]="budget.touched && budget.invalid"
+            />
+            <div *ngIf="budget.touched && budget.errors?.required" class="my-2 form-error-prompt">
+              Budget estimate required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row targetDate" [class.has-errors]="targetDate.touched && targetDate.invalid">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="targetDate">WHEN ARE YOU HOPING TO HAVE YOUR PROJECT COMPLETED BY?</label>
+            <input
+              type="text"
+              formControlName="targetDate"
+              name="targetDate"
+              class="form-control"
+              id="targetDate"
+              [class.is-invalid]="targetDate.touched && targetDate.invalid"
+            />
+            <div *ngIf="targetDate.touched && targetDate.errors?.required" class="my-2 form-error-prompt">
+              Tentative time frame required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row additionalInfo">
+      <div class="col-xs-8">
+        <div class="col-xs-8">
+          <div class="mb-3">
+            <label for="additionalInfo">ADDITIONAL INFO (OPTIONAL)</label>
+            <input
+              type="text"
+              formControlName="additionalInfo"
+              name="additionalInfo"
+              class="form-control"
+              id="additionalInfo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-8" id="button-container">
+        <div class="mb-3">
+          <button class="btn btn-inquiry-submit" [class.btn-highlight]="inquiryForm.valid" type="submit" [disabled]="inquiryForm.invalid">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

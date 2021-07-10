@@ -1,0 +1,80 @@
+@import './src/utilities/variables';
+
+label,
+input,
+select,
+option,
+.form-error-prompt {
+  font-family: Forum;
+}
+
+.alert-text {
+  font-family: Lato;
+}
+
+a {
+  text-decoration: none;
+  color: #FF0040;
+}
+
+input.form-control {
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+select.form-control {
+  border: 1px solid black;
+  border-radius: 0px;
+  -webkit-appearance: menulist-button !important;
+  width: fit-content;
+  margin-top: 1vh;
+}
+
+.form-control {
+  // removes input box glow
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+#button-container {
+  text-align: center;
+}
+
+.btn-inquiry-submit {
+  border-color: black;
+  background-color: transparent;
+  font-family: Forum;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.btn-highlight:hover,
+.btn-highlight:focus,
+.btn-highlight:active,
+.btn-highlight.active,
+.open > .dropdown-toggle.btn-highlight {
+  color: #FF0040;
+  border-color: #FF0040;
+}
+
+.has-errors {
+  &,
+  .control-label {
+    color: #dc3545;
+  }
+}

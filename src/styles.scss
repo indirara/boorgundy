@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'utilities/variables';
+@import '~font-awesome/css/font-awesome.css';
+@import '~@fontsource/montserrat/index.css';
+@import '~@fontsource/quicksand/index.css';
+@import '~@fontsource/forum/index.css';
+@import '~@fontsource/lato';
+
+/* audrey-normal */
+@font-face {
+  font-family: 'Audrey-Normal';
+  src: url('assets/fonts/audrey/Audrey-Normal.otf') format('opentype');
+}
+
+/* audrey-normaloblique */
+@font-face {
+  font-family: 'Audrey-NormalOblique';
+  src: url('assets/fonts/audrey/Audrey-NormalOblique.otf') format('opentype');
+}
+
+/* audrey-bold */
+@font-face {
+  font-family: 'Audrey-Bold';
+  src: url('assets/fonts/audrey/Audrey-Bold.otf') format('opentype');
+}
+
+/* audrey-boldoblique */
+@font-face {
+  font-family: 'Audrey-BoldOblique';
+  src: url('assets/fonts/audrey/Audrey-BoldOblique.otf') format('opentype');
+}
+
+/* audrey-medium */
+@font-face {
+  font-family: 'Audrey-Medium';
+  src: url('assets/fonts/audrey/Audrey-Medium.otf') format('opentype');
+}
+
+/* audrey-mediumoblique */
+@font-face {
+  font-family: 'Audrey-MediumOblique';
+  src: url('assets/fonts/audrey/Audrey-MediumOblique.otf') format('opentype');
+}
+
+/* lato-light */
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('assets/fonts/lato-light/Lato-Light.ttf') format('truetype');
+}
+
+/* santa fe */
+@font-face {
+  font-family: 'SantaFe';
+  src: url('assets/fonts/santafe/SantaFeSpring.woff') format('woff');
+}
+
+/* santa fe tail*/
+@font-face {
+  font-family: 'SantaFeTail';
+  src: url('assets/fonts/santafe/SantaFeSpringTail.woff') format('woff');
+}
+
+.btn-social {
+  border-color: black;
+  background-color: transparent;
+  font-family: Forum;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.btn-social:hover,
+.btn-social:focus,
+.btn-social:active,
+.btn-social.active,
+.open > .dropdown-toggle.btn-social {
+  color: #ff0040;
+  border-color: #ff0040;
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: Lato-Light;
+}
